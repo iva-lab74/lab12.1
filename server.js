@@ -11,5 +11,14 @@ const port = 3000;
 app.get('/', (req, res) => {
 
     //response
-    res.send(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+//second GET
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/contact.html'));
+});
+
+//listen for upcoming reqquests
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
